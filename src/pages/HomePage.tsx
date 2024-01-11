@@ -1,5 +1,6 @@
 import Logo from "../components/Logo";
 import Chevron from "../components/Chevron";
+import List from "../components/List";
 
 const products = ["Model S", "Model 3", "Model X", "Model Y", "Cybertruck"];
 const navItems = ["Shop", "Account", "Menu"];
@@ -29,27 +30,11 @@ function HomePage() {
           <Logo></Logo>
         </div>
         <div className="hidden lg:inline">
-          <ul className="flex space-x-2">
-            {products.map((p) => (
-              <li
-                key={p}
-                className="py-1 px-3 hover:bg-slate-300 hover:rounded-full cursor-pointer"
-              >
-                {p}
-              </li>
-            ))}
-          </ul>
+          <List items={products}></List>
         </div>
         <div>
           <ul className="flex space-x-4 mr-2">
-            {navItems.map((m) => (
-              <li
-                key={m}
-                className="cursor-pointer hover:rounded-full hover:bg-slate-300 py-1 px-3"
-              >
-                {m}
-              </li>
-            ))}
+            <List items={navItems}></List>
           </ul>
         </div>
         <div className="flex flex-col absolute top-20 left-[50%] translate-x-[-50%] translate-y-[50%]">
