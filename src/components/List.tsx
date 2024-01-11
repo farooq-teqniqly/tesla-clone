@@ -1,15 +1,16 @@
 interface Props {
   items: string[];
-  additionalStyles?: string;
+  additionalListStyles?: string;
+  additionalListItemStyles?: string;
 }
 
-function List({ items, additionalStyles = "" }: Props) {
+function List({ items, additionalListStyles = "", additionalListItemStyles = "" }: Props) {
   return (
-    <ul className="flex space-x-2">
+    <ul className={`${additionalListStyles}`}>
       {items.map((i) => (
         <li
           key={i}
-          className={`py-1 px-3 hover:bg-slate-300 hover:rounded-full cursor-pointer ${additionalStyles}`}
+          className={`py-1 px-3 hover:bg-slate-300 hover:rounded-full cursor-pointer ${additionalListItemStyles}`}
         >
           {i}
         </li>

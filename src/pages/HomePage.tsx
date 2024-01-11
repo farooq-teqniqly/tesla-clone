@@ -1,26 +1,10 @@
 import Logo from "../components/Logo";
 import Chevron from "../components/Chevron";
 import List from "../components/List";
+import Button from "../components/Button";
 
 const products = ["Model S", "Model 3", "Model X", "Model Y", "Cybertruck"];
 const navItems = ["Shop", "Account", "Menu"];
-
-const buttonDefs = [
-  {
-    text: "Custom Order",
-    textColor: "text-black",
-    bgColor: "bg-white",
-    hover: "hover:bg-slate-100",
-    additionalStyles: "",
-  },
-  {
-    text: "Browse Inventory",
-    textColor: "text-white",
-    bgColor: "bg-black",
-    hover: "hover:bg-slate-800",
-    additionalStyles: "mt-4 md:mt:0",
-  },
-];
 
 function HomePage() {
   return (
@@ -30,12 +14,10 @@ function HomePage() {
           <Logo></Logo>
         </div>
         <div className="hidden lg:inline">
-          <List items={products}></List>
+          <List items={products} additionalListStyles="flex space-x-2"></List>
         </div>
         <div>
-          <ul className="flex space-x-4 mr-2">
-            <List items={navItems}></List>
-          </ul>
+          <List items={navItems} additionalListStyles="flex space-x-4 mr-2"></List>
         </div>
         <div className="flex flex-col absolute top-20 left-[50%] translate-x-[-50%] translate-y-[50%]">
           <h1 className="text-5xl m-auto">Model 3</h1>
@@ -47,14 +29,18 @@ function HomePage() {
           </p>
         </div>
         <div className="absolute bottom-[80px] left-[50%] translate-x-[-50%] flex-col md:flex-row md:space-x-4">
-          {buttonDefs.map((b) => (
-            <button
-              key={b.text}
-              className={`uppercase ${b.bgColor} ${b.textColor} w-96 h-10 md:w-60 rounded-full ${b.hover} md:w-60 ${b.additionalStyles}`}
-            >
-              {b.text}
-            </button>
-          ))}
+          <Button
+            text="Custom Order"
+            textColor="text-black"
+            bgColor="bg-white"
+            additionalStyles="hover:bg-slate-100"
+          ></Button>
+          <Button
+            text="Browse Inventory"
+            textColor="text-white"
+            bgColor="bg-black"
+            additionalStyles="hover:bg-slate-800 mt-4 md:mt:0"
+          ></Button>
         </div>
         <div className="absolute left-[50%] translate-x-[-50%] bottom-3">
           <Chevron></Chevron>
