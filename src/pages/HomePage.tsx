@@ -14,10 +14,10 @@ function HomePage() {
           <Logo></Logo>
         </div>
         <div className="hidden lg:inline">
-          <List items={products} className="flex space-x-2"></List>
+          <List items={products} additionaListStyle="flex space-x-2"></List>
         </div>
         <div>
-          <List items={navItems} className="flex space-x-4 mr-2"></List>
+          <List items={navItems} additionaListStyle="flex space-x-4 mr-2"></List>
         </div>
         <div className="flex flex-col absolute top-20 left-[50%] translate-x-[-50%] translate-y-[50%]">
           <h1 className="text-5xl m-auto">Model 3</h1>
@@ -31,15 +31,11 @@ function HomePage() {
         <div className="absolute bottom-[80px] left-[50%] translate-x-[-50%] flex-col md:flex-row md:space-x-4">
           <Button
             text="Custom Order"
-            textColor="text-black"
-            bgColor="bg-white"
-            additionalStyles="hover:bg-slate-100"
+            additionalButtonStyle="text-black bg-white hover:bg-slate-100"
           ></Button>
           <Button
             text="Browse Inventory"
-            textColor="text-white"
-            bgColor="bg-black"
-            additionalStyles="hover:bg-slate-800 mt-4 md:mt:0"
+            additionalButtonStyle="text-white bg-black hover:bg-slate-800 mt-4 md:mt:0"
           ></Button>
         </div>
         <div className="absolute left-[50%] translate-x-[-50%] bottom-3">
