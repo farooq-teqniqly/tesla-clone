@@ -14,10 +14,10 @@ function HomePage() {
           <Logo></Logo>
         </div>
         <div className="hidden lg:inline">
-          <List items={products} additionalListStyles="flex space-x-2"></List>
+          <List items={products} className="flex space-x-2"></List>
         </div>
         <div>
-          <List items={navItems} additionalListStyles="flex space-x-4 mr-2"></List>
+          <List items={navItems} className="flex space-x-4 mr-2"></List>
         </div>
         <div className="flex flex-col absolute top-20 left-[50%] translate-x-[-50%] translate-y-[50%]">
           <h1 className="text-5xl m-auto">Model 3</h1>

@@ -1,17 +1,14 @@
-interface Props {
-  items: string[];
-  additionalListStyles?: string;
-  additionalListItemStyles?: string;
-}
+import { ComponentPropsWithoutRef } from "react";
 
-function List({ items, additionalListStyles = "", additionalListItemStyles = "" }: Props) {
+type Props = {
+  items: string[];
+} & ComponentPropsWithoutRef<"ul">;
+
+function List({ items, ...listProps }: Props) {
   return (
-    <ul className={`${additionalListStyles}`}>
+    <ul {...listProps}>
       {items.map((i) => (
-        <li
-          key={i}
-          className={`py-1 px-3 hover:bg-slate-300 hover:rounded-full cursor-pointer ${additionalListItemStyles}`}
-        >
+        <li key={i} className={`py-1 px-3 hover:bg-slate-300 hover:rounded-full cursor-pointer`}>
           {i}
         </li>
       ))}
